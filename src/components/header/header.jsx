@@ -10,7 +10,8 @@ import CartDropdown from '../cart-dropdown/cart-dropdown';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden }) => {
+    return (
     <div className='header'>
         <Link to='/' className='logo-container'>
             <Logo className='logo'></Logo>
@@ -27,7 +28,7 @@ const Header = ({ currentUser, hidden }) => (
             hidden ? null : <CartDropdown />
         }
     </div>
-);
+)};
 
 const mapStateToProps = createStructuredSelector ({
     currentUser: selectCurrentUser,
